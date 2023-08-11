@@ -57,14 +57,7 @@ const app = express();
 
 app.use(express.json());
 
-app.post('/adapter', async (req, res) => {
-
-    // console.log("req ", req)
-
-    // if (req.body.token !== 'USDA') {
-    //     return res.status(400).json({ jobRunID: req.body.id, status: 'errored', error: 'Invalid token. Only USDA is supported.' });
-    // }
-
+app.get('/adapter', async (req, res) => {
     try {
         const price = await getLatestPrice();
         const response = {
