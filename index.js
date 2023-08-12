@@ -61,7 +61,7 @@ app.get('/adapter', async (req, res) => {
     try {
         const price = await getLatestPrice();
         const response = {
-            usda: price,
+            USDA: price,
             statusCode: 200
         };
         res.json(response);
