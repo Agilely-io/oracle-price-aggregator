@@ -57,7 +57,7 @@ const app = express();
 
 app.use(express.json());
 
-app.post('/adapter', async (req, res) => {
+app.get('/adapter', async (req, res) => {
     try {
         const price = await getLatestPrice();
         const response = {
