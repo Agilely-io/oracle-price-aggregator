@@ -61,9 +61,7 @@ app.get('/adapter', async (req, res) => {
     try {
         const price = await getLatestPrice();
         const response = {
-            jobRunID: req.body.id,
-            data: { price },
-            result: price,
+            usda: price,
             statusCode: 200
         };
         res.json(response);
