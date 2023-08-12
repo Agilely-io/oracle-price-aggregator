@@ -62,7 +62,11 @@ app.post('/adapter', async (req, res) => {
         const price = await getLatestPrice();
         const response = {
             jobRunID: req.body.id,
-            data: { price },
+            data: {
+                price: {
+                    USDA: price
+                }
+            },
             statusCode: 200
         };
         res.json(response);
