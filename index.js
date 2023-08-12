@@ -57,11 +57,12 @@ const app = express();
 
 app.use(express.json());
 
-app.get('/adapter', async (req, res) => {
+app.post('/adapter', async (req, res) => {
     try {
         const price = await getLatestPrice();
         const response = {
-            USDA: price,
+            jobRunID: req.body.id,
+            data: { price },
             statusCode: 200
         };
         res.json(response);
